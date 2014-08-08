@@ -1,0 +1,72 @@
+[
+{
+    "site": "http://www.tangjk.com/users/",
+    "charset":"GBK",
+    "info_extractor": {
+        "title": "//*[@id=\"lwTitleLab\"]",
+        "date": "//*[@id=\"lwDateLab\"]",
+        "author_name":"//*[@id=\"lwNameLab\"]",
+        "describe": "//*[@id=\"contentLab\"]",
+        "reply_title": "//*[@id=\"lwList1_1_rep_lwTitleLab_0\"]",
+        "reply_content": "//*[@id=\"lwList1_1_rep_lwReContentLeb_0\"]"
+    	}
+	},
+{
+    "site": "http://www.tangjk.com/news-detail/",
+    "charset":"GBK",
+    "info_extractor": {
+        "title": "//*[@class=\"cell132_2\"]/h3",
+        "date": "//*[@class=\"cell132_2\"]/h2",
+        "author_name":"//*[@class=\"cell132_2\"]/h2/a[1]",
+        "reply_content": "//*[@id=\"newsDetail_1_myContentLab\"]"
+    	}
+	},
+{
+    "site": "http://www.120ask.com/question/",
+    "charset":"utf-8",
+    "info_extractor": {
+        "title": "//*[@id=\"d_askH1\"]",
+        "date": "//*[@class=\"b_answerarea\"]/span/font",
+        "author_name":"//*[@class=\"b_sp1\"]/a/font",
+        "describe": "//*[@id=\"d_msCon\"]",
+        "reply_content": "//*[@class=\"crazy_new\"]/p"
+    }
+},
+{
+    "site": "http://zhidao.baidu.com/question/",
+    "charset":"gbk",
+    "htmlunit": "yes",
+    "info_extractor": {
+        "title": "//*[@id=\"wgt-ask\"]/h1/span",
+        "date": "//*[@id=\"ask-info\"]/span[1]",
+		"author_name":"//*[@class=\"grid f-aid\"]/p[1]/a[1]",
+        "describe": "//*[@id=\"wgt-ask\"]/pre",
+        "reply_content": "//*[@class=\"line content\"]",
+		"scan":"//*[@id=\"ask-info\"]/span[5]"
+    }
+},
+{
+    "site": "http://ask.39.net/question/",
+    "charset":"gb2312",
+    "info_extractor": {
+        "title": "//*[@class=\"t_right\"]/h1",
+        "date": "//*[@id=\"w_left\"]/div[2]/div/div[2]/span[1]/cite",
+        "describe": "//*[@class=\"tbox tbox_nobg\"]/div/div[2]/p",
+        "reply_content": "//*[@id=\"w_left\"]/div[9]/div[1]/div[2]/p"
+    }
+},
+{
+    "site": "http://www.haodf.com/wenda/",
+    "charset":"gb2312",
+    "info_extractor": {
+        "title": "//*[@class=\"thread_con pl10 pr10\"]/p",
+        "date": "//*[@class=\"bb_d3 bl_d3 pb20\"]/div[3]/div[2]/p[2]",
+		"author_name":"//*[@class=\"clearfix pt10 pl20 pr20\"]/span",
+        "describe": "//*[@class=\"bingLiInfo_first\"]/div[2]/div[2]/ul/li[2]",
+        "reply_content": "//*[@class=\"s_doc_reply1\"]/div"
+    }
+}
+
+
+
+]

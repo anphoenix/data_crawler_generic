@@ -1,0 +1,36 @@
+[
+{
+    "charset":"GBK",
+    "crawl_conf": {
+        "seed" : "http://www.tangjk.com",
+        "category" : [ "/Expert-Q--amp-A/Expert-interaction" ],
+        "list_pattern" : "//*[@class=\"cell19_2_1\"]/table/tbody/tr[*]/td[3]/a",
+        "next_pattern" : "//*[@id=\"shequREP_pageNumLab\"]/a",
+        "next_type": "all"
+    	}
+	},
+{
+    "charset":"GBK",
+    "crawl_conf": {
+        "seed" : "http://www.tangjk.com",
+        "category" : [ "/dictionary/1xing/","/Self-management/Sports/" ],
+        "list_pattern" : "//*[@class=\"cell_5_2_3\"]/div[2]/div[*]/a",
+        "next_pattern" : "//*[@id=\"newsREP_1_pageNumLab\"]/a[position()>1]",
+        "first_dif" :"yes",
+        "next_type": "all"
+    	}
+},
+{
+    "charset":"GBK",
+    "source":"//*[@class=\"list symptom-list\"]/dl[*]/dt/span/a",
+    "crawl_conf": {
+        "seed" : "http://zhidao.baidu.com/search?word=",
+		"category":["%E7%B3%96%E5%B0%BF%E7%97%85"],
+        "list_pattern" : "//*[@class=\"list symptom-list\"]/dl[*]/dt/a",
+        "next_pattern" : "//*[@class=\"pager-next\"]",
+        "next_url_pre" : "http://zhidao.baidu.com",
+		"next_type":"next"
+   		 }
+}
+
+]
