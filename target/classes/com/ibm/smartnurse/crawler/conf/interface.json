@@ -13,7 +13,7 @@
     "charset":"GBK",
     "crawl_conf": {
         "seed" : "http://www.tangjk.com",
-        "category" : [ "/dictionary/1xing/","/Self-management/Sports/" ],
+        "category" : [ "/dictionary/qianqi/","/dictionary/1xing/","/dictionary/2xing/","/dictionary/renc/","/dictionary/other/","/dictionary/fenxing-ertongtangniaobing/","/dictionary/fenxing-laorentangniaobing/","/dictionary/fenxing-nanrentangniaobing/","/dictionary/fenxing-nvrentangniaobing/","/dictionary/fenxing-qingshaoniantangniaobing/","/Self-management/Diet/","/dictionary/tnbz/","/dictionary/yiyuzheng/","/dictionary/xinzhangbing/","/dictionary/ed/","/dictionary/gaoxueya/","/dictionary/tzszd/","/dictionary/changweibing/","/dictionary/pifubing/","/dictionary/naobing/","/dictionary/dixuetang/","/dictionary/ganbing/","/dictionary/yanbing/","/dictionary/shenbing/","/dictionary/feipang/","/dictionary/mingchi-canhouxuetang/","/Self-management/People-at-home-with-sugar/","/Self-management/Sports/","/Self-management/Monitoring/","/Self-management/Psychology/","/Self-management/Pump/","/Self-management/Drugs/" ],
         "list_pattern" : "//*[@class=\"cell_5_2_3\"]/div[2]/div[*]/a",
         "next_pattern" : "//*[@id=\"newsREP_1_pageNumLab\"]/a[position()>1]",
         "first_dif" :"yes",

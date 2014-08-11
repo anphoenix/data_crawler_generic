@@ -1,6 +1,5 @@
 package com.ibm.crawler.db;
 
-import java.io.IOException;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

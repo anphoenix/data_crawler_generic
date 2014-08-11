@@ -2,7 +2,6 @@ package com.ibm.smartnurse.crawler;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.ibm.smartnurse.crawler.conf.ConfManagerUtil;
 
 public class CrawlerManage {

@@ -1,7 +1,9 @@
 [
 {
     "site": "http://www.tangjk.com/users/",
+    "save_name": "tangjk",
     "charset":"GBK",
+    "date_format":"yyyy-MM-dd",
     "info_extractor": {
         "title": "//*[@id=\"lwTitleLab\"]",
         "date": "//*[@id=\"lwDateLab\"]",
@@ -13,7 +15,9 @@
 	},
 {
     "site": "http://www.tangjk.com/news-detail/",
+    "save_name": "tangjk",
     "charset":"GBK",
+    "date_format":"yyyy-MM-dd",
     "info_extractor": {
         "title": "//*[@class=\"cell132_2\"]/h3",
         "date": "//*[@class=\"cell132_2\"]/h2",
@@ -24,10 +28,12 @@
 {
     "site": "http://www.120ask.com/question/",
     "charset":"utf-8",
+    "save_name": "120ask",
+    "date_format":"yyyy-MM-dd",
     "info_extractor": {
         "title": "//*[@id=\"d_askH1\"]",
         "date": "//*[@class=\"b_answerarea\"]/span/font",
-        "author_name":"//*[@class=\"b_sp1\"]/a/font",
+        "author_name":"//*[@class=\"b_answerbox\"]/div[1]/div[1]/div/span[1]/a/font",
         "describe": "//*[@id=\"d_msCon\"]",
         "reply_content": "//*[@class=\"crazy_new\"]/p"
     }
@@ -35,19 +41,25 @@
 {
     "site": "http://zhidao.baidu.com/question/",
     "charset":"gbk",
+    "save_name": "zhidao",
+    "date_format":"yyyy-MM-dd",
     "htmlunit": "yes",
     "info_extractor": {
         "title": "//*[@id=\"wgt-ask\"]/h1/span",
         "date": "//*[@id=\"ask-info\"]/span[1]",
 		"author_name":"//*[@class=\"grid f-aid\"]/p[1]/a[1]",
+		"support":"//*[@class=\"evaluate-num evaluate-num-fixed\"]",
+		"oppose":"//*[@class=\"evaluate evaluate-bad evaluate-32\"]/span/span/b[2]",
         "describe": "//*[@id=\"wgt-ask\"]/pre",
         "reply_content": "//*[@class=\"line content\"]",
-		"scan":"//*[@id=\"ask-info\"]/span[5]"
+		"scan":"//*[@class=\"browse-times\"]"
     }
 },
 {
     "site": "http://ask.39.net/question/",
     "charset":"gb2312",
+    "save_name": "39ask",
+    "date_format":"yyyy-MM-dd",
     "info_extractor": {
         "title": "//*[@class=\"t_right\"]/h1",
         "date": "//*[@id=\"w_left\"]/div[2]/div/div[2]/span[1]/cite",
@@ -58,6 +70,8 @@
 {
     "site": "http://www.haodf.com/wenda/",
     "charset":"gb2312",
+    "save_name": "haodf",
+    "date_format":"yyyy-MM-dd",
     "info_extractor": {
         "title": "//*[@class=\"thread_con pl10 pr10\"]/p",
         "date": "//*[@class=\"bb_d3 bl_d3 pb20\"]/div[3]/div[2]/p[2]",
@@ -65,8 +79,40 @@
         "describe": "//*[@class=\"bingLiInfo_first\"]/div[2]/div[2]/ul/li[2]",
         "reply_content": "//*[@class=\"s_doc_reply1\"]/div"
     }
+},
+
+{
+    "site": "http://www.babytree.com/ask/detail/",
+    "charset":"utf-8",
+    "save_name": "babytree",
+    "date_format":"yyyy-MM-dd",
+    "htmlunit":"yes",
+    "info_extractor": {
+        "title": "//*[@id=\"qa-article\"]/div[1]/h1",
+        "date": "//*[@class=\"source\"]/abbr",
+	"author_name":"//*[@class=\"best-content\"]/div[2]/div[2]/ul/li[1]/a/span",
+
+        "author_pnum":"//*[@class=\"answer-related\"]/div[2]/ul/li[3]/a",
+        "author_snum":"//*[@class=\"answer-related\"]/div[2]/ul/li[4]",
+        "describe": "//*[@id=\"qa-article\"]/blockquote",
+        "reply_content": "//*[@id=\"best_answer_content\"]"
+    }
+},
+
+{
+    "site": "http://ask.ci123.com/questions/show/",
+    "charset":"utf-8",
+    "save_name": "yuer",
+    "date_format":"yyyy-MM-dd",
+    "htmlunit":"",
+    "info_extractor": {
+        "title": "//*[@id=\"ask_middle2\"]/div[5]/div[1]/ul[2]/table/tbody/tr[1]/td[2]/h3",
+
+        "date": "//*[@id=\"ask_middle2\"]/div[5]/div[3]/div/ul[2]/table/tbody/tr[2]/td/p",
+	"author_name":"//*[@id=\"ask_middle2\"]/div[5]/div[3]/div/ul[2]/table/tbody/tr[1]/td[1]/p[1]/a",
+        "describe": "//*[@id=\"ask_middle2\"]/div[5]/div[1]/ul[2]/table/tbody/tr[1]/td[2]/span",
+        "reply_content": "//*[@id=\"ask_middle2\"]/div[5]/div[3]/div/ul[2]/table/tbody/tr[1]/td[2]/span"
+    }
 }
-
-
 
 ]

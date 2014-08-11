@@ -101,6 +101,7 @@ public class ExtractInfoWithHtmlCleaner {
 		System.out.println("HtmlCleaner: "+url);
 		if (sourceConf == null ) return ;
 		String charSet = sourceConf.get(ConfConstants.SOURCE_CHARSET).getAsString();
+		String save_name = sourceConf.get(ConfConstants.SOURCE_SAVE_NAME).getAsString();
 		TagNode node = null;
 		try{
 			node = cleaner.clean(new URL(url),charSet);
@@ -114,10 +115,21 @@ public class ExtractInfoWithHtmlCleaner {
 		for(Entry<String, JsonElement> entry: info.entrySet())
 		{
 			result = ExtractInfoWithHtmlCleaner.INSTANCE.parsePageInfoByPathandIndex(node, entry.getValue().getAsString(), 0);
+			
 			if(result.length()>0)
+			{
+				if(entry.getKey().equals(ConfConstants.SOURCE_INFO_DATE))
+				{
+					result = CommonUtil.getDateString(result,".*?([0-9]+.[0-9]+.[0-9]+).*");
+//					String format = sourceConf.get(ConfConstants.SOURCE_DATE_FORMAT).getAsString();
+//					result = (CommonUtil.stringToDateByconf(result, format)).toString();
+				}
 				qa.addProperty(entry.getKey(), CommonUtil.cleanString(result));
+				
+			}
 		}
-		CommonUtil.saveContent(qa.toString()+"\n", SysConf.SAVE_PATH);
+		qa.addProperty(ConfConstants.SOURCE_URL, url);
+		CommonUtil.saveContent(qa.toString()+"\n", SysConf.SAVE_PATH+save_name+".txt");
 	}
 	public static void main(String[] args) throws IOException, XPatherException {
 		CleanerProperties props = cleaner.getProperties();     
@@ -131,17 +143,21 @@ public class ExtractInfoWithHtmlCleaner {
         File file = new File("E:/test4java/tangniaobing.htm");
         
         
-        URL url = new URL("http://www.tangjk.com/dictionary/qianqi/");
-		 TagNode node = cleaner.clean(url,"GBK");
+        URL url = new URL("http://www.haodf.com/wenda/anzhentaohong_g_638200415.htm");
+		 TagNode node = cleaner.clean(url,"gb2312");
 		 //Object[] ns = node.getElementsByName("", true);
-		 Object[] ns = node.evaluateXPath("//*[@id=\"newsREP_1_pageNumLab\"]/a[position()>1]");
+		 Object[] ns = node.evaluateXPath("//*[@class=\"bb_d3 bl_d3 pb20\"]/div[3]/div[2]/p[2]");
 		 //Object[] ns = node.("//*[@id=\"shequREP_pageNumLab\"]/a");
 		 for (Object object : ns) 
 		 {
 		    TagNode dd = (TagNode) object;
-		    result = result +dd.getAttributeByName("href")+"\n";
+		    
+		    result = result +dd.getText()+"\n";
 		 }
 		 result = result.replace("&nbsp", "").replace("\r", "").replace(";", "");
+		 
+				result = CommonUtil.getDateString(result,".*?([0-9]+.[0-9]+.[0-9]+).*");
+	
 		 /*result = "?uthorid=4917458&page=6&tid=16785968";
 		 String rex = "\\?(?!authorid=).*";
 		 Pattern p = Pattern.compile(rex);

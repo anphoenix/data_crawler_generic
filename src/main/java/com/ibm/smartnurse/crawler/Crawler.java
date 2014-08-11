@@ -6,13 +6,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.htmlcleaner.TagNode;
 import org.htmlcleaner.XPatherException;
-
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.ibm.crawler.db.LinkManager;
 import com.ibm.smartnurse.crawler.conf.ConfConstants;
 import com.ibm.smartnurse.crawler.extractor.ExtractInfoWithHtmlCleaner;
 import com.ibm.smartnurse.crawler.extractor.ExtractInfoWithHtmlUnit;
@@ -78,15 +79,15 @@ public class Crawler {
 		for(String url : list_url)
 		{
 			parameters.put("url", seed+url);
-			//if (LinkManager.isExistUser(parameters)) continue;
+			if (LinkManager.isExistUser(parameters)) continue;
 			JsonObject conf = getConfByURL(seed+url);
 			if(conf!=null && conf.has("htmlunit"))
 				ExtractInfoWithHtmlUnit.INSTANCE.getPageInfoUseHtmlUnit(seed+url, conf);
 			else 
 				ExtractInfoWithHtmlCleaner.INSTANCE.getPageInfoUseHtmlCleaner(seed+url, conf);
 			JsonObject link = new JsonObject();
-			link.addProperty("url", url);
-			//LinkManager.insertLink(link);
+			link.addProperty("url", seed+url);
+			LinkManager.insertLink(link);
 		}
 	}
 	public  JsonObject getConfByURL(String url)
